@@ -12,6 +12,7 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Build;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.TintTypedArray;
@@ -53,12 +54,20 @@ public class MaterialRatingBar extends RatingBar {
     private void init(AttributeSet attrs, int defStyleAttr) {
 
         Context context = getContext();
+        @DrawableRes int backgroundDrawable;
+        @DrawableRes int progressDrawable;
+        ColorStateList backgroundDrawableTint = null;
+
         TintTypedArray a = TintTypedArray.obtainStyledAttributes(context, attrs,
                 R.styleable.MaterialRatingBar, defStyleAttr, 0);
         if (a.hasValue(R.styleable.MaterialRatingBar_mrb_progressTint)) {
             mProgressTintInfo.mProgressTintList = a.getColorStateList(
                     R.styleable.MaterialRatingBar_mrb_progressTint);
             mProgressTintInfo.mHasProgressTintList = true;
+        }
+        if (a.hasValue(R.styleable.MaterialRatingBar_mrb_backgroundTint)) {
+            backgroundDrawableTint = a.getColorStateList(
+                    R.styleable.MaterialRatingBar_mrb_backgroundTint);
         }
         if (a.hasValue(R.styleable.MaterialRatingBar_mrb_progressTintMode)) {
             mProgressTintInfo.mProgressTintMode = DrawableCompat.parseTintMode(a.getInt(
@@ -95,9 +104,13 @@ public class MaterialRatingBar extends RatingBar {
                     R.styleable.MaterialRatingBar_mrb_indeterminateTintMode, -1), null);
             mProgressTintInfo.mHasIndeterminateTintMode = true;
         }
+
+        backgroundDrawable = a.getResourceId(R.styleable.MaterialRatingBar_mrb_background_drawable, R.drawable.mrb_star_border_icon_black_36dp);
+        progressDrawable = a.getResourceId(R.styleable.MaterialRatingBar_mrb_progress_drawable, R.drawable.mrb_star_icon_black_36dp);
+
         a.recycle();
 
-        mDrawable = new MaterialRatingDrawable(getContext());
+        mDrawable = new MaterialRatingDrawable(getContext(), backgroundDrawable, progressDrawable, backgroundDrawableTint);
         mDrawable.setStarCount(getNumStars());
         setProgressDrawable(mDrawable);
     }
@@ -475,7 +488,7 @@ public class MaterialRatingBar extends RatingBar {
          * {@link OnRatingBarChangeListener}.
          *
          * @param ratingBar The RatingBar whose rating has changed.
-         * @param rating The current rating. This will be in the range 0..numStars.
+         * @param rating    The current rating. This will be in the range 0..numStars.
          */
         void onRatingChanged(MaterialRatingBar ratingBar, float rating);
     }

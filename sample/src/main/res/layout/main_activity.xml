@@ -16,11 +16,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/screen_edge_vertical_margin"
         android:paddingLeft="@dimen/screen_edge_horizontal_margin"
         android:paddingRight="@dimen/screen_edge_horizontal_margin"
-        android:paddingTop="@dimen/screen_edge_vertical_margin"
-        android:paddingBottom="@dimen/screen_edge_vertical_margin"
-        android:orientation="vertical">
+        android:paddingTop="@dimen/screen_edge_vertical_margin">
 
         <!-- Normal Layout -->
 
@@ -28,55 +28,55 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/normal_layout"
-            android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/framework_implementation"
-            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
 
         <RatingBar
             android:id="@+id/framework_normal_ratingbar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:maxHeight="48dp"
             android:layout_marginLeft="-4dp"
             android:layout_marginRight="-4dp"
-            android:rating="2.5" />
+            android:maxHeight="48dp"
+            android:minHeight="48dp"
+            android:rating="2.5"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/library_implementation"
-            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
 
         <me.zhanghai.android.materialratingbar.MaterialRatingBar
             android:id="@+id/library_normal_ratingbar"
+            style="@style/Widget.MaterialRatingBar.RatingBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="-3dp"
             android:layout_marginRight="-3dp"
-            android:rating="2.5"
-            style="@style/Widget.MaterialRatingBar.RatingBar" />
+            android:rating="2.5"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/library_implementation_tinted"
-            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
 
         <me.zhanghai.android.materialratingbar.MaterialRatingBar
             android:id="@+id/library_tinted_normal_ratingbar"
+            style="@style/Widget.MaterialRatingBar.RatingBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="-3dp"
             android:layout_marginRight="-3dp"
             android:rating="2.5"
             app:mrb_progressTint="@color/tint"
-            app:mrb_secondaryProgressTint="@color/tint"
-            style="@style/Widget.MaterialRatingBar.RatingBar" />
+            app:mrb_secondaryProgressTint="@color/tint"/>
 
         <!-- Wide Layout -->
 
@@ -84,49 +84,49 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/wide_layout"
-            android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/framework_implementation"
-            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
 
         <RatingBar
             android:id="@+id/framework_wide_ratingbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
             android:maxHeight="48dp"
-            android:rating="2.5" />
+            android:minHeight="48dp"
+            android:rating="2.5"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/library_implementation"
-            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
 
         <me.zhanghai.android.materialratingbar.MaterialRatingBar
             android:id="@+id/library_wide_ratingbar"
+            style="@style/Widget.MaterialRatingBar.RatingBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:rating="2.5"
-            style="@style/Widget.MaterialRatingBar.RatingBar" />
+            android:rating="2.5"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/library_implementation_tinted"
-            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
 
         <me.zhanghai.android.materialratingbar.MaterialRatingBar
             android:id="@+id/library_tinted_wide_ratingbar"
+            style="@style/Widget.MaterialRatingBar.RatingBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:rating="2.5"
             app:mrb_progressTint="@color/tint"
-            app:mrb_secondaryProgressTint="@color/tint"
-            style="@style/Widget.MaterialRatingBar.RatingBar" />
+            app:mrb_secondaryProgressTint="@color/tint"/>
 
         <!-- Decimal step size -->
 
@@ -134,49 +134,50 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/decimal_step_size"
-            android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/framework_implementation"
-            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
 
         <RatingBar
             android:id="@+id/framework_decimal_ratingbar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
+            android:isIndicator="true"
             android:maxHeight="48dp"
-            android:stepSize="0.01"
-            android:isIndicator="true" />
+            android:minHeight="48dp"
+            android:stepSize="0.01"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/library_implementation"
-            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
 
         <me.zhanghai.android.materialratingbar.MaterialRatingBar
             android:id="@+id/library_decimal_ratingbar"
+            style="@style/Widget.MaterialRatingBar.RatingBar.Indicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:stepSize="0.01"
-            style="@style/Widget.MaterialRatingBar.RatingBar.Indicator" />
+            android:stepSize="0.01"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/library_implementation_tinted"
-            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
 
         <me.zhanghai.android.materialratingbar.MaterialRatingBar
             android:id="@+id/library_tinted_decimal_ratingbar"
+            style="@style/Widget.MaterialRatingBar.RatingBar.Indicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:stepSize="0.01"
-            app:mrb_progressTint="@color/tint"
-            app:mrb_secondaryProgressTint="@color/tint"
-            style="@style/Widget.MaterialRatingBar.RatingBar.Indicator" />
+            app:mrb_background_drawable="@drawable/ic_star_black_24dp"
+            app:mrb_backgroundTint="#0f0"
+            app:mrb_progressTint="@color/tint"/>
     </LinearLayout>
 </ScrollView>
